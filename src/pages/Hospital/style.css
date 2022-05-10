@@ -1,0 +1,18 @@
+.table90 {
+  width: 90vw    /* Occupy the 90% of the screen width */
+  max-width: 90vw;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+
+  @media (min-width: 768px) {
+    .modal-xl {
+      width: 90%;
+     max-width:1200px;
+    }
+  }
+}
