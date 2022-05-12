@@ -67,23 +67,20 @@ const Receita: React.FC = () => {
 
     const webApiUrl = `/receita?cnes=${
       sessionUser.DefaultHospital?.cnes
-    }&competencia=${itemCompetencia?.mesAno || vcomp}&idCentro=${
-      ItemCentroCusto?.centroCusto.idCentro
-    }`;
+    }&competencia=${itemCompetencia?.mesAno || vcomp}`;
     const tokenStr = sessionUser.token;
     const json = await apiFuncoes.getDadosApi(webApiUrl, tokenStr);
     if (json.error) {
       setMessagem({
         Mensagem: `error: ${json.error} -
-        path:  ${json.path} - 
-        status:  ${json.status} `,
+          path:  ${json.path} - 
+          status:  ${json.status} `,
         TipoMensagem: 'danger',
       });
     } else {
       setLoading(false);
       setlisReceitas(json);
       AtualizaValorTotal(json);
-      // console.log(ItemCentroCusto?.centroCusto.idCentro);
     }
   };
 
@@ -322,18 +319,18 @@ const Receita: React.FC = () => {
             />
           </Col>
         </Row>
-        {loading && (
+        {/* {loading && (
           <Mensagem
             Mensagem={messagem?.Mensagem || ''}
             TipoMensagem={messagem?.TipoMensagem || ''}
           />
-        )}
+        )} */}
 
-        <CentroCustoHospitalSelect
+        {/* <CentroCustoHospitalSelect
           onChange={handleTrocaCentroCusto}
           onError={setMessagem}
           vValorAtual={ItemCentroCusto?.centroCusto.idCentro.toString() || '0'}
-        />
+        /> */}
         <p />
 
         <p />

@@ -143,7 +143,7 @@ const Despesa: React.FC = () => {
         setLisDespesa(json);
         CarregaPaiFilho(json);
         AtualizaValorTotal(json);
-        // console.log(json);
+        console.log(json);
       }
     }
   };
